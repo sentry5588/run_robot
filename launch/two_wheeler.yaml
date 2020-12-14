@@ -1,0 +1,19 @@
+session_name: robot
+
+suppress_history: false
+
+windows:
+
+- window_name: Robot
+  focus: true
+  layout: main-vertical
+  panes:
+    - roscore
+    - echo "" && echo "Welcome to the balancing robot world!"
+
+- window_name: Sensor
+  focus: true
+  layout: main-vertical
+  panes:
+    - echo "" && echo "Welcome to the balancing robot world!"
+    - echo "" && echo "Welcome to sensor measurement and state estimation"
