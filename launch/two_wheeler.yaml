@@ -15,7 +15,7 @@ windows:
   layout: main-vertical
   panes:
     - echo "" && echo "Welcome to sensor measurement and state estimation"
-    - roslaunch --wait mpu6050 complementary_filter.launch
+    - roslaunch --wait state_estimation complementary_filter.launch
 
 - window_name: Control
   layout: main-vertical
