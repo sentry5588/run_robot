@@ -8,17 +8,26 @@ windows:
   focus: true
   layout: main-vertical
   panes:
-    - roscore
     - echo "" && echo "Welcome to the balancing robot world!"
+    - roscore
 
 - window_name: State Estimation
   layout: main-vertical
   panes:
     - echo "" && echo "Welcome to sensor measurement and state estimation"
-    - roslaunch --wait state_estimation complementary_filter.launch
+    - roslaunch  --wait  state_estimation  complementary_filter.launch
 
 - window_name: Control
   layout: main-vertical
   panes:
     - echo "" && echo "Welcome to control"
-    - roslaunch --wait control control.launch
+    - roslaunch  --wait  control  control.launch
+
+- window_name: rosserial
+  layout: main-vertical
+  panes:
+    - roslaunch  --wait  rosserial_arduino  ros_serial_arduino.launch
+
+- window_name: Cmd
+  panes:
+    - echo "" && echo "Welcome to the spare command window"
