@@ -14,14 +14,18 @@ windows:
 - window_name: State Estimation
   layout: main-vertical
   panes:
-    - echo "" && echo "Welcome to sensor measurement and state estimation"
     - roslaunch  --wait  state_estimation  complementary_filter.launch
+    - sleep 8 && rostopic echo /pitch_angle
+    - sleep 8 && rostopic hz /pitch_angle
 
 - window_name: Control
   layout: main-vertical
   panes:
-    - echo "" && echo "Welcome to control"
     - roslaunch  --wait  control  control.launch
+    - sleep 10 && rostopic echo /left_motor_hz
+    - sleep 10 && rostopic echo /right_motor_hz
+    - sleep 10 && rostopic hz /left_motor_hz
+    - sleep 10 && rostopic hz /right_motor_hz
 
 - window_name: rosserial
   layout: main-vertical
@@ -31,3 +35,7 @@ windows:
 - window_name: Cmd
   panes:
     - echo "" && echo "Welcome to the spare command window"
+
+- window_name: gdb
+  panes:
+    - echo "" && echo "The good old gdb is awesome!"
